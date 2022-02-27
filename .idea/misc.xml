@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DATN/TOTest_Graduation/app/src/main/res/layout/activity_list_test.xml" value="0.16802536231884058" />
+        <entry key="..\:/DATN/TOTest_Graduation/app/src/main/res/layout/activity_main.xml" value="0.16802536231884058" />
         <entry key="..\:/DATN/TOTest_Graduation/app/src/main/res/layout/activity_talking_test.xml" value="0.14628623188405798" />
+        <entry key="..\:/DATN/TOTest_Graduation/app/src/main/res/layout/drawer_item_header.xml" value="0.33" />
+        <entry key="..\:/DATN/TOTest_Graduation/app/src/main/res/layout/fragment_grammar_detail.xml" value="0.16802536231884058" />
+        <entry key="..\:/DATN/TOTest_Graduation/app/src/main/res/layout/item_grammar_detail.xml" value="0.16802536231884058" />
+        <entry key="..\:/DATN/TOTest_Graduation/app/src/main/res/menu/activity_main_drawer.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/layout/activity_list_test.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_talking_test.xml" value="0.375" />
