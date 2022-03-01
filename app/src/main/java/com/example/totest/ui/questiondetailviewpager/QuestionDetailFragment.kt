@@ -167,7 +167,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setDataFirebase() = data?.let {
-        if (it.image.isNotEmpty()){
+        if (it.image.isNotEmpty()) {
             imgQuestionTitle.visibility = View.VISIBLE
             storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(it.image)
         }
