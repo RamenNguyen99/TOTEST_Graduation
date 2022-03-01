@@ -178,14 +178,14 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
                         imgQuestionTitle
                     )
             }
+            rbAnswerA.text = optionA
+            rbAnswerB.text = optionB
+            rbAnswerC.text = optionC
+            rbAnswerD.text = optionD
             tvQuestionContent.text = question
             if (level != R.id.itemPart1 && level != R.id.itemPart2) {
                 tvQuestionTitle.text = questionTitle
                 tvQuestionContent.text = question
-                rbAnswerA.text = optionA
-                rbAnswerB.text = optionB
-                rbAnswerC.text = optionC
-                rbAnswerD.text = optionD
                 tvExplanation.text = explanation
                 tvTranslation.text = translation
             }
