@@ -148,17 +148,8 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
                     tvLevel.text = getString(R.string.part4)
                     dataReference = getReference("test1").child("part4")
                 }
-                R.id.itemPart5Basic -> {
+                R.id.itemPart5 -> {
                     tvLevel.text = getString(R.string.part5Basic)
-                    dataReference = getReference("test1").child("part5")
-                }
-                R.id.itemPart5Intermediate -> {
-                    tvLevel.text =
-                        getString(R.string.part5Intermediate)
-                    dataReference = getReference("test1").child("part5")
-                }
-                R.id.itemPart5Advanced -> {
-                    tvLevel.text = getString(R.string.part5Advanced)
                     dataReference = getReference("test1").child("part5")
                 }
                 R.id.itemPart6 -> {

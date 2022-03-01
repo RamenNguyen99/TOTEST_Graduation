@@ -63,17 +63,9 @@ class ListTestActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 initListTestFragment(R.id.itemPart4)
                 supportActionBar?.title = getString(R.string.part4)
             }
-            R.id.itemPart5Basic -> {
-                initListTestFragment(R.id.itemPart5Basic)
+            R.id.itemPart5 -> {
+                initListTestFragment(R.id.itemPart5)
                 supportActionBar?.title = getString(R.string.part5Basic)
-            }
-            R.id.itemPart5Intermediate -> {
-                initListTestFragment(R.id.itemPart5Intermediate)
-                supportActionBar?.title = getString(R.string.part5Intermediate)
-            }
-            R.id.itemPart5Advanced -> {
-                initListTestFragment(R.id.itemPart5Advanced)
-                supportActionBar?.title = getString(R.string.part5Advanced)
             }
             R.id.itemPart6 -> {
                 initListTestFragment(R.id.itemPart6)
