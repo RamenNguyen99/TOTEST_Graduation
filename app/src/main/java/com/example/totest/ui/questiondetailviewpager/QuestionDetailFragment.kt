@@ -18,6 +18,8 @@ import com.example.totest.data.model.QuestionDetail
 import com.example.totest.databinding.FragmentQuestionDetailBinding
 import com.example.totest.ui.listtest.ListTestFragment
 import com.example.totest.ui.takingtest.TalkingTestActivity
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_talking_test.*
 import kotlinx.android.synthetic.main.fragment_question_detail.*
 import java.text.SimpleDateFormat
@@ -30,6 +32,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
     private var level: Int? = null
     private var isDestroy = false
     private var binding: FragmentQuestionDetailBinding? = null
+    private var storageReference: StorageReference? = null
 
     companion object {
         const val ARG_POSITION = "arg_position"
@@ -65,7 +68,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        Log.i("QuestionDetailFragment", "onViewCreated: $data")
         (activity as TalkingTestActivity).apply {
             mediaPlayer = MediaPlayer()
             mediaPlayer?.setAudioStreamType(AudioManager.STREAM_MUSIC)
@@ -164,9 +167,13 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setDataFirebase() = data?.let {
+        if (it.image.isNotEmpty()){
+            imgQuestionTitle.visibility = View.VISIBLE
+            storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(it.image)
+        }
         with(it) {
             when (level) {
-                R.id.itemPart1 -> Glide.with(activity as TalkingTestActivity).load(questionTitle)
+                R.id.itemPart1 -> Glide.with(activity as TalkingTestActivity).load(storageReference)
                     .into(
                         imgQuestionTitle
                     )
