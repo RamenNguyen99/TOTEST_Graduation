@@ -85,22 +85,22 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
         when (v?.id) {
             R.id.rbAnswerA -> {
                 data?.myAnswer =
-                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].answerA
+                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].optionA
                 showAnswerAfterOnClick()
             }
             R.id.rbAnswerB -> {
                 data?.myAnswer =
-                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].answerB
+                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].optionB
                 showAnswerAfterOnClick()
             }
             R.id.rbAnswerC -> {
                 data?.myAnswer =
-                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].answerC
+                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].optionC
                 showAnswerAfterOnClick()
             }
             R.id.rbAnswerD -> {
                 data?.myAnswer =
-                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].answerD
+                    (activity as TalkingTestActivity).questionDetailList[(activity as TalkingTestActivity).questionDetailPager.currentItem].optionD
                 showAnswerAfterOnClick()
             }
         }
@@ -175,10 +175,10 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             if (level != R.id.itemPart1 && level != R.id.itemPart2) {
                 tvQuestionTitle.text = questionTitle
                 tvQuestionContent.text = question
-                rbAnswerA.text = answerA
-                rbAnswerB.text = answerB
-                rbAnswerC.text = answerC
-                rbAnswerD.text = answerD
+                rbAnswerA.text = optionA
+                rbAnswerB.text = optionB
+                rbAnswerC.text = optionC
+                rbAnswerD.text = optionD
                 tvExplanation.text = explanation
                 tvTranslation.text = translation
             }
@@ -233,19 +233,19 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             data?.apply {
                 when {
                     rbAnswerA.isChecked -> {
-                        myAnswer = answerA
+                        myAnswer = optionA
                         isQuestionChecked = true
                     }
                     rbAnswerB.isChecked -> {
-                        myAnswer = answerB
+                        myAnswer = optionB
                         isQuestionChecked = true
                     }
                     rbAnswerC.isChecked -> {
-                        myAnswer = answerC
+                        myAnswer = optionC
                         isQuestionChecked = true
                     }
                     rbAnswerD.isChecked -> {
-                        myAnswer = answerD
+                        myAnswer = optionD
                         isQuestionChecked = true
                     }
                 }
@@ -265,10 +265,10 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             data?.apply {
                 isQuestionChecked = true
                 if (level == R.id.itemPart1 || level == R.id.itemPart2) {
-                    rbAnswerA.text = answerA
-                    rbAnswerB.text = answerB
-                    rbAnswerC.text = answerC
-                    rbAnswerD.text = answerD
+                    rbAnswerA.text = optionA
+                    rbAnswerB.text = optionB
+                    rbAnswerC.text = optionC
+                    rbAnswerD.text = optionD
                     tvQuestionContent.text =
                         if (level == R.id.itemPart2) question else questionContent
                 } else {
@@ -277,32 +277,32 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
                 with(this) {
                     if (myAnswer != correctAnswer) {
                         when (correctAnswer) {
-                            answerA -> rbAnswerA.setBackgroundColor(
+                            optionA -> rbAnswerA.setBackgroundColor(
                                 if (myAnswer.isBlank()) resources.getColor(R.color.colorOrange) else resources.getColor(
                                     R.color.colorBlueAnswer
                                 )
                             )
-                            answerB -> rbAnswerB.setBackgroundColor(
+                            optionB -> rbAnswerB.setBackgroundColor(
                                 if (myAnswer.isBlank()) resources.getColor(R.color.colorOrange) else resources.getColor(
                                     R.color.colorBlueAnswer
                                 )
                             )
-                            answerC -> rbAnswerC.setBackgroundColor(
+                            optionC -> rbAnswerC.setBackgroundColor(
                                 if (myAnswer.isBlank()) resources.getColor(R.color.colorOrange) else resources.getColor(
                                     R.color.colorBlueAnswer
                                 )
                             )
-                            answerD -> rbAnswerD.setBackgroundColor(
+                            optionD -> rbAnswerD.setBackgroundColor(
                                 if (myAnswer.isBlank()) resources.getColor(R.color.colorOrange) else resources.getColor(
                                     R.color.colorBlueAnswer
                                 )
                             )
                         }
                         when (myAnswer) {
-                            answerA -> rbAnswerA.setBackgroundColor(resources.getColor(R.color.colorPink))
-                            answerB -> rbAnswerB.setBackgroundColor(resources.getColor(R.color.colorPink))
-                            answerC -> rbAnswerC.setBackgroundColor(resources.getColor(R.color.colorPink))
-                            answerD -> rbAnswerD.setBackgroundColor(resources.getColor(R.color.colorPink))
+                            optionA -> rbAnswerA.setBackgroundColor(resources.getColor(R.color.colorPink))
+                            optionB -> rbAnswerB.setBackgroundColor(resources.getColor(R.color.colorPink))
+                            optionC -> rbAnswerC.setBackgroundColor(resources.getColor(R.color.colorPink))
+                            optionD -> rbAnswerD.setBackgroundColor(resources.getColor(R.color.colorPink))
                         }
                     }
                 }

@@ -134,40 +134,40 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
             when (level) {
                 R.id.itemPart1 -> {
                     tvLevel.text = getString(R.string.part1)
-                    dataReference = getReference("practicebasic01")
+                    dataReference = getReference("test1").child("part1")
                 }
                 R.id.itemPart2 -> {
                     tvLevel.text = getString(R.string.part2)
-                    dataReference = getReference("practicebasic02")
+                    dataReference = getReference("test1").child("part2")
                 }
                 R.id.itemPart3 -> {
                     tvLevel.text = getString(R.string.part3)
-                    dataReference = getReference("practicebasic02")
+                    dataReference = getReference("test1").child("part3")
                 }
                 R.id.itemPart4 -> {
                     tvLevel.text = getString(R.string.part4)
-                    dataReference = getReference("part4-0${position + 1}")
+                    dataReference = getReference("test1").child("part4")
                 }
                 R.id.itemPart5Basic -> {
                     tvLevel.text = getString(R.string.part5Basic)
-                    dataReference = getReference("part5Basic0${position + 1}")
+                    dataReference = getReference("test1").child("part5")
                 }
                 R.id.itemPart5Intermediate -> {
                     tvLevel.text =
                         getString(R.string.part5Intermediate)
-                    dataReference = getReference("part5Intermediate0${position + 1}")
+                    dataReference = getReference("test1").child("part5")
                 }
                 R.id.itemPart5Advanced -> {
                     tvLevel.text = getString(R.string.part5Advanced)
-                    dataReference = getReference("part5Advanced0${position + 1}")
+                    dataReference = getReference("test1").child("part5")
                 }
                 R.id.itemPart6 -> {
                     tvLevel.text = getString(R.string.part6)
-                    dataReference = getReference("part6-0${position + 1}")
+                    dataReference = getReference("test1").child("part6")
                 }
                 R.id.itemPart7 -> {
                     tvLevel.text = getString(R.string.part7)
-                    dataReference = getReference("part7-0${position + 1}")
+                    dataReference = getReference("test1").child("part7")
                 }
                 R.id.itemGrammar -> {
                     grammarList =
@@ -207,6 +207,7 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 override fun onDataChange(dataPractice: DataSnapshot) {
+                    Log.i("TAG", "onDataChange: $dataPractice")
                     dismissProgressDialog()
                     notifyNetworkStatus()
                     for (i in dataPractice.children) {
