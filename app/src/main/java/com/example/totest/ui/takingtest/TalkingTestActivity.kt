@@ -60,6 +60,7 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
         level = intent.getIntExtra(ListTestFragment.ARG_LEVEL, 0)
         Log.i("xxxxxx", "onCreate: ${level}")
         position = intent.getIntExtra(ListTestFragment.ARG_POSITION, -1)
+        Log.i("xxxxxx", "onCreate: ${level}")
 
         setContentView(R.layout.activity_talking_test)
         window.statusBarColor = resources.getColor(R.color.colorBlue)
@@ -224,10 +225,10 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
                 QuestionNumber(
                     when (level) {
                         R.id.itemPart1 -> 1 + i
-                        R.id.itemPart2 -> 11 + i
-                        R.id.itemPart3 -> 41 + i
+                        R.id.itemPart2 -> 7 + i
+                        R.id.itemPart3 -> 32 + i
                         R.id.itemPart4 -> 71 + i
-                        R.id.itemPart6 -> 141 + i
+                        R.id.itemPart6 -> 131 + i
                         R.id.itemPart7 -> 147 + i
                         else -> 101 + i
                     }

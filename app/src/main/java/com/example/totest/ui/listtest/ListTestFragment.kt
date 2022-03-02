@@ -66,7 +66,7 @@ class ListTestFragment : Fragment(), TestListAdapter.OnClickTestItem {
         if (requestCode == REQUEST_CODE_TIME_AND_SCORE) {
             if (resultCode == Activity.RESULT_OK) {
                 data?.apply {
-                    testList[getIntExtra(ListTestFragment.ARG_POSITION, -1)].apply {
+                    testList[getIntExtra(ARG_POSITION, -1)].apply {
                         timeDisplay = "getStringExtra(TestResultFragment.KEY_TIME)"
                         scoreDisplay = "getStringExtra(TestResultFragment.KEY_SCORE)"
                     }
