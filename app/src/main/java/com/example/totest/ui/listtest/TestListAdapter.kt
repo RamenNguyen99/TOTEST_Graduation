@@ -34,7 +34,6 @@ class TestListAdapter(
         override fun onClick(v: View?) = listener.onClickTestItem(layoutPosition)
 
         fun bindView(listItems: TestList) {
-            Log.i("TestListAdapter", "bindView: ${listItems.toString()}")
             with(itemView) {
                 with(listItems) {
                     binding.run {
