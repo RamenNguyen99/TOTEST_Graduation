@@ -57,6 +57,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             position = it.getInt(ARG_POSITION)
             Log.i("xxxx", "onCreateView: ${position}")
             data = it.getParcelable(ARG_DATA)
+            Log.i("data", "onCreateView: $data")
         }
         (activity as TalkingTestActivity).apply {
             progressDialog?.dismiss()
@@ -184,7 +185,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             rbAnswerD.text = optionD
             tvQuestionContent.text = question
             if (level != R.id.itemPart1 && level != R.id.itemPart2) {
-                tvQuestionTitle.text = questionTitle
+                tvQuestionTitle.text = question //questionTitle
                 tvQuestionContent.text = question
                 tvExplanation.text = explanation
                 tvTranslation.text = translation
