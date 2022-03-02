@@ -13,6 +13,7 @@ import com.example.totest.R
 import com.example.totest.data.model.TestList
 import com.example.totest.databinding.FragmentListTestBinding
 import com.example.totest.ui.takingtest.TalkingTestActivity
+import com.example.totest.ui.takingtest.TestResultFragment
 import com.google.gson.GsonBuilder
 
 class ListTestFragment : Fragment(), TestListAdapter.OnClickTestItem {
@@ -66,9 +67,9 @@ class ListTestFragment : Fragment(), TestListAdapter.OnClickTestItem {
         if (requestCode == REQUEST_CODE_TIME_AND_SCORE) {
             if (resultCode == Activity.RESULT_OK) {
                 data?.apply {
-                    testList[getIntExtra(ARG_POSITION, -1)].apply {
-                        timeDisplay = "getStringExtra(TestResultFragment.KEY_TIME)"
-                        scoreDisplay = "getStringExtra(TestResultFragment.KEY_SCORE)"
+                    testList[getIntExtra(ListTestFragment.ARG_POSITION, -1)].apply {
+                        timeDisplay = getStringExtra(TestResultFragment.KEY_TIME).toString()
+                        scoreDisplay = getStringExtra(TestResultFragment.KEY_SCORE).toString()
                     }
                     testAdapter?.notifyDataSetChanged()
                 }
