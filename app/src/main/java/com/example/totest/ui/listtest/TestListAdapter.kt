@@ -1,5 +1,6 @@
 package com.example.totest.ui.listtest
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +34,7 @@ class TestListAdapter(
         override fun onClick(v: View?) = listener.onClickTestItem(layoutPosition)
 
         fun bindView(listItems: TestList) {
+            Log.i("TestListAdapter", "bindView: ${listItems.toString()}")
             with(itemView) {
                 with(listItems) {
                     binding.run {

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -68,6 +69,7 @@ class TestResultFragment : Fragment(), View.OnClickListener {
             }
             R.id.btnExit -> {
                 activity?.apply {
+                    Log.i("TestResultFragment", "onClick: ${tvDurationTime.text.toString()} , score : ${(activity as TalkingTestActivity).score.toString()}")
                     setResult(
                         Activity.RESULT_OK, Intent()
                             .putExtra(KEY_TIME, tvDurationTime.text.toString())
@@ -94,6 +96,7 @@ class TestResultFragment : Fragment(), View.OnClickListener {
         val listTimeandScore =
             gson.fromJson(dataTimeAndScore, Array<TestList>::class.java)?.toList()?.toMutableList()
                 ?: arrayListOf()
+        Log.i("TestResultFragment", "setTimeAndScore: ${(activity as TalkingTestActivity).chronometer.text.toString()},score ${(activity as TalkingTestActivity).score.toString()} ")
         listTimeandScore.add(
             TestList(
                 "${getString(R.string.practice)} ${position + 1}",
