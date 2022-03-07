@@ -203,6 +203,11 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
                     dismissProgressDialog()
                     notifyNetworkStatus()
                     for (i in dataPractice.children) {
+                        if (tvLevel.text == getString(R.string.part3)){
+
+                        }else{
+
+                        }
                         val question = i.getValue(QuestionDetail::class.java)
                         question?.let {
                             questionDetailList.add(it)
