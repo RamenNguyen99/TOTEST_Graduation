@@ -20,10 +20,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.totest.R
-import com.example.totest.data.model.GrammarList
-import com.example.totest.data.model.QuestionDetail
-import com.example.totest.data.model.QuestionNumber
-import com.example.totest.data.model.WordList
+import com.example.totest.data.model.*
 import com.example.totest.ui.grammardetail.GrammarDetailFragment
 import com.example.totest.ui.listtest.ListTestFragment
 import com.example.totest.ui.questiondetailviewpager.QuestionDetailAdapter
@@ -40,6 +37,7 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
     private var wordList = mutableListOf<WordList>()
     var questionNumberList = mutableListOf<QuestionNumber>()
     var questionDetailList = arrayListOf<QuestionDetail>()
+    var audioList = arrayListOf<Audio>()
     var progressDialog: ProgressDialog? = null
     var mediaPlayer: MediaPlayer? = null
     var score = 0
@@ -204,20 +202,23 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
                     notifyNetworkStatus()
                     for (i in dataPractice.children) {
                         if (tvLevel.text == getString(R.string.part3)){
-
+                            val audio = i.getValue(Audio::class.java)
+                            audio?.let {
+                                audioList.add(it)
+                            }
                         }else{
+                            val question = i.getValue(QuestionDetail::class.java)
+                            question?.let {
+                                questionDetailList.add(it)
 
-                        }
-                        val question = i.getValue(QuestionDetail::class.java)
-                        question?.let {
-                            questionDetailList.add(it)
-
+                            }
                         }
                     }
                     setListQuestionNumber()
                     Log.i("xxxxx", "onDataChange: $questionDetailList")
+                    Log.i("xxxxx", "onDataChange: audio $audioList")
                     questionDetailPager?.adapter =
-                        QuestionDetailAdapter(supportFragmentManager, questionDetailList)
+                        QuestionDetailAdapter(supportFragmentManager, questionDetailList, audioList)
                     chronometer.start()
                 }
             })

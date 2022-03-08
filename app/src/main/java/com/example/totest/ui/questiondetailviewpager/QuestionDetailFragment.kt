@@ -14,6 +14,7 @@ import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.totest.R
+import com.example.totest.data.model.Audio
 import com.example.totest.data.model.QuestionDetail
 import com.example.totest.databinding.FragmentQuestionDetailBinding
 import com.example.totest.ui.listtest.ListTestFragment
@@ -33,16 +34,19 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
     private var isDestroy = false
     private var binding: FragmentQuestionDetailBinding? = null
     private var storageReference: StorageReference? = null
+    private var audio:Audio? = null
 
     companion object {
         const val ARG_POSITION = "arg_position"
         const val ARG_DATA = "arg_data"
+        const val AUDIO = "audio"
 
-        fun getInstance(position: Int, question: QuestionDetail): QuestionDetailFragment =
+        fun getInstance(position: Int, question: QuestionDetail? , audio:Audio?): QuestionDetailFragment =
             QuestionDetailFragment().apply {
                 val bundle = Bundle().apply {
                     putInt(ARG_POSITION, position)
                     putParcelable(ARG_DATA, question)
+                    putParcelable(AUDIO,audio)
                 }
                 arguments = bundle
             }
@@ -58,6 +62,9 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             Log.i("xxxx", "onCreateView: ${position}")
             data = it.getParcelable(ARG_DATA)
             Log.i("data", "onCreateView: $data")
+            audio = it.getParcelable(AUDIO)
+            Log.i("audio", "onCreateView: $audio")
+
         }
         (activity as TalkingTestActivity).apply {
             progressDialog?.dismiss()
@@ -202,9 +209,15 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
         imgState.setOnClickListener {
             (activity as TalkingTestActivity).mediaPlayer?.apply {
                 try {
-                    setDataSource(data?.audio)
-                    setOnPreparedListener { mp -> mp.start() }
-                    prepare()
+                    if (level == R.id.itemPart3){
+                        setDataSource(audio?.audioSumaries)
+                        setOnPreparedListener { mp -> mp.start() }
+                        prepare()
+                    }else{
+                        setDataSource(data?.audio)
+                        setOnPreparedListener { mp -> mp.start() }
+                        prepare()
+                    }
                 } catch (e: Exception) {
                 }
                 seekBarPlay.max = duration
