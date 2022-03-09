@@ -201,12 +201,12 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
                     dismissProgressDialog()
                     notifyNetworkStatus()
                     for (i in dataPractice.children) {
-                        if (tvLevel.text == getString(R.string.part3)){
+                        if (tvLevel.text == getString(R.string.part3)) {
                             val audio = i.getValue(Audio::class.java)
                             audio?.let {
                                 audioList.add(it)
                             }
-                        }else{
+                        } else {
                             val question = i.getValue(QuestionDetail::class.java)
                             question?.let {
                                 questionDetailList.add(it)
@@ -226,20 +226,30 @@ class TalkingTestActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setListQuestionNumber() {
-        for (i in 0 until questionDetailList.size) {
-            (questionNumberList as ArrayList<QuestionNumber>).add(
-                QuestionNumber(
-                    when (level) {
-                        R.id.itemPart1 -> 1 + i
-                        R.id.itemPart2 -> 7 + i
-                        R.id.itemPart3 -> 32 + i
-                        R.id.itemPart4 -> 71 + i
-                        R.id.itemPart6 -> 131 + i
-                        R.id.itemPart7 -> 147 + i
-                        else -> 101 + i
-                    }
+        if (level == R.id.itemPart3) {
+            for (i in 0 until audioList.size * 3) {
+                if (level == R.id.itemPart3) {
+                    (questionNumberList as ArrayList<QuestionNumber>).add(
+                        QuestionNumber(32 + i)
+                    )
+                }
+            }
+        } else {
+            for (i in 0 until questionDetailList.size) {
+                (questionNumberList as ArrayList<QuestionNumber>).add(
+                    QuestionNumber(
+                        when (level) {
+                            R.id.itemPart1 -> 1 + i
+                            R.id.itemPart2 -> 7 + i
+//                            R.id.itemPart3 -> 32 + i
+                            R.id.itemPart4 -> 71 + i
+                            R.id.itemPart6 -> 131 + i
+                            R.id.itemPart7 -> 147 + i
+                            else -> 101 + i
+                        }
+                    )
                 )
-            )
+            }
         }
     }
 
