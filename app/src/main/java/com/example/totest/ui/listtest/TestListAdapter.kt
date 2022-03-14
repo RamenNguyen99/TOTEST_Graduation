@@ -1,5 +1,6 @@
 package com.example.totest.ui.listtest
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
