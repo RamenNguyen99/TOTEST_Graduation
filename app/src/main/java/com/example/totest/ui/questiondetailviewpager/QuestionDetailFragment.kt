@@ -18,8 +18,6 @@ import com.example.totest.data.model.QuestionDetail
 import com.example.totest.databinding.FragmentQuestionDetailBinding
 import com.example.totest.ui.listtest.ListTestFragment
 import com.example.totest.ui.takingtest.TalkingTestActivity
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_talking_test.*
 import kotlinx.android.synthetic.main.fragment_question_detail.*
 import java.text.SimpleDateFormat
@@ -32,7 +30,6 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
     private var level: Int? = null
     private var isDestroy = false
     private var binding: FragmentQuestionDetailBinding? = null
-    private var storageReference: StorageReference? = null
 
     companion object {
         const val ARG_POSITION = "arg_position"
@@ -55,7 +52,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
     ): View? {
         arguments?.let {
             position = it.getInt(ARG_POSITION)
-            Log.i("xxxx", "onCreateView: ${position}")
+            Log.i("xxxx", "onCreateView: $position")
             data = it.getParcelable(ARG_DATA)
             Log.i("data", "onCreateView: $data")
         }
@@ -170,11 +167,10 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
     private fun setDataFirebase() = data?.let {
         if (it.image.isNotEmpty()) {
             imgQuestionTitle.visibility = View.VISIBLE
-            storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(it.image)
         }
         with(it) {
             when (level) {
-                R.id.itemPart1 -> Glide.with(activity as TalkingTestActivity).load(storageReference)
+                R.id.itemPart1 -> Glide.with(activity as TalkingTestActivity).load(data?.image)
                     .into(
                         imgQuestionTitle
                     )
