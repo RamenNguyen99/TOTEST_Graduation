@@ -34,6 +34,7 @@ class TestResultFragment : Fragment(), View.OnClickListener {
         (activity as TalkingTestActivity).apply {
             level = intent.getIntExtra(ListTestFragment.ARG_LEVEL, 0)
         }
+        level = (activity as TalkingTestActivity).level
         binding = FragmentTestResultBinding.inflate(inflater, container, false)
         return binding?.root
     }
