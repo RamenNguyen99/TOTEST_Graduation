@@ -280,9 +280,9 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
                     rbAnswerC.text = optionC
                     rbAnswerD.text = optionD
                     tvQuestionContent.text = question
-//                        if (level == R.id.itemPart2) question else questionContent
+//                    if (level == R.id.itemPart2) question else questionContent
                 } else {
-                    cardViewExplanation.visibility = View.VISIBLE
+//                    cardViewExplanation.visibility = View.VISIBLE
                 }
                 with(this) {
                     if (myAnswer != correctAnswer) {
