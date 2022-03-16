@@ -157,9 +157,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             R.id.itemPart6, R.id.itemPart7 -> {
                 tvQuestionContent.visibility = View.VISIBLE
                 tvQuestionTitle.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
-                if (level == R.id.itemPart7) {
-                    setLayoutHeight()
-                }
+                setLayoutHeight()
             }
         }
     }
@@ -170,7 +168,12 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
         }
         with(it) {
             when (level) {
-                R.id.itemPart1 -> Glide.with(activity as TalkingTestActivity).load(data?.image)
+                R.id.itemPart1,
+                R.id.itemPart3,
+                R.id.itemPart4,
+                R.id.itemPart6,
+                R.id.itemPart7 -> Glide.with(activity as TalkingTestActivity)
+                    .load(data?.image)
                     .into(
                         imgQuestionTitle
                     )
@@ -181,7 +184,10 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             rbAnswerD.text = optionD
             tvQuestionContent.text = question
             if (level != R.id.itemPart1 && level != R.id.itemPart2) {
-                tvQuestionTitle.text = question //questionTitle
+                if (level == R.id.itemPart5) {
+                    tvQuestionTitle.text = question
+                }
+//                tvQuestionTitle.text = questionTitle
                 tvQuestionContent.text = question
                 tvExplanation.text = explanation
                 tvTranslation.text = translation
@@ -274,9 +280,9 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
                     rbAnswerC.text = optionC
                     rbAnswerD.text = optionD
                     tvQuestionContent.text = question
-//                        if (level == R.id.itemPart2) question else questionContent
+//                    if (level == R.id.itemPart2) question else questionContent
                 } else {
-                    cardViewExplanation.visibility = View.VISIBLE
+//                    cardViewExplanation.visibility = View.VISIBLE
                 }
                 with(this) {
                     if (myAnswer != correctAnswer) {
