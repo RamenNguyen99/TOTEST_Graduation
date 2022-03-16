@@ -26,8 +26,8 @@
                     android:textSize="@dimen/dimen16dp"
                     android:layout_marginTop="@dimen/dimen10dp"
                     android:layout_marginBottom="@dimen/dimen10dp"
-                    android:layout_marginStart="@dimen/dimen20dp"
-                    android:layout_marginEnd="@dimen/dimen20dp"
+                    android:layout_marginStart="@dimen/dimen10dp"
+                    android:layout_marginEnd="@dimen/dimen10dp"
                     android:visibility="gone"/>
 
             <TextView
