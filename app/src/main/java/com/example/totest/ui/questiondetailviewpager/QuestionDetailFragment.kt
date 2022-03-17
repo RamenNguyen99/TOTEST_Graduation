@@ -147,7 +147,7 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             R.id.itemPart3, R.id.itemPart4 -> {
                 with(View.VISIBLE) {
                     tvQuestionContent.visibility = this
-                    if(data?.audio?.isNotEmpty() == true) {
+                    if (data?.audio?.isNotEmpty() == true) {
                         cardViewAudio.visibility = this
                     }
                 }
@@ -173,12 +173,28 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
                 R.id.itemPart1,
                 R.id.itemPart3,
                 R.id.itemPart4,
-                R.id.itemPart6,
-                R.id.itemPart7 -> Glide.with(activity as TalkingTestActivity)
-                    .load(data?.image)
-                    .into(
-                        imgQuestionTitle
-                    )
+                R.id.itemPart6 -> {
+                    Glide.with(activity as TalkingTestActivity)
+                        .load(data?.image)
+                        .into(imgQuestionTitle)
+                }
+                R.id.itemPart7 -> {
+                    Glide.with(activity as TalkingTestActivity)
+                        .load(data?.image)
+                        .into(imgQuestionTitle)
+                    if (it.image2.isNotEmpty()) {
+                        cardViewQuestionTitle2.visibility = View.VISIBLE
+                        Glide.with(activity as TalkingTestActivity)
+                            .load(data?.image2)
+                            .into(imgQuestionTitle2)
+                    }
+                    if (it.image3.isNotEmpty()) {
+                        cardViewQuestionTitle3.visibility = View.VISIBLE
+                        Glide.with(activity as TalkingTestActivity)
+                            .load(data?.image3)
+                            .into(imgQuestionTitle3)
+                    }
+                }
             }
             rbAnswerA.text = optionA
             rbAnswerB.text = optionB

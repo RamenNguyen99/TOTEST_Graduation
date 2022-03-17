@@ -1,265 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewQuestionTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:gravity="center"
-                android:text="@string/questionDetailHere"
-                android:layout_margin="@dimen/dimen10dp">
+            android:id="@+id/cardViewQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen10dp"
+            android:gravity="center"
+            android:text="@string/questionDetailHere"
+            android:textColor="@color/colorAccent">
 
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imgQuestionTitle"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/dimen16dp"
-                    android:layout_marginTop="@dimen/dimen10dp"
-                    android:layout_marginBottom="@dimen/dimen10dp"
-                    android:layout_marginStart="@dimen/dimen10dp"
-                    android:layout_marginEnd="@dimen/dimen10dp"
-                    android:visibility="gone"/>
+                android:id="@+id/imgQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen10dp"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:layout_marginEnd="@dimen/dimen10dp"
+                android:layout_marginBottom="@dimen/dimen10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/dimen16dp"
+                android:visibility="gone" />
 
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen120dp"
-                    android:id="@+id/tvQuestionTitle"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/dimen16dp"
-                    android:layout_marginTop="@dimen/dimen10dp"
-                    android:layout_marginBottom="@dimen/dimen10dp"
-                    android:layout_marginStart="@dimen/dimen20dp"
-                    android:layout_marginEnd="@dimen/dimen20dp"/>
-
+                android:id="@+id/tvQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen120dp"
+                android:layout_marginStart="@dimen/dimen20dp"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:layout_marginEnd="@dimen/dimen20dp"
+                android:layout_marginBottom="@dimen/dimen10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/dimen16dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewQuestionTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardViewQuestionTitle"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_marginBottom="@dimen/dimen10dp"
+            android:gravity="center"
+            android:text="@string/questionDetailHere"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imgQuestionTitle2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/cardViewAnswer"
-                android:layout_below="@+id/cardViewQuestionTitle"
                 android:layout_marginStart="@dimen/dimen10dp"
+                android:layout_marginTop="@dimen/dimen10dp"
                 android:layout_marginEnd="@dimen/dimen10dp"
-                android:layout_marginBottom="@dimen/dimen10dp">
+                android:layout_marginBottom="@dimen/dimen10dp"
+                android:textColor="@color/colorBlack" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewQuestionTitle3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardViewQuestionTitle2"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_marginBottom="@dimen/dimen10dp"
+            android:gravity="center"
+            android:text="@string/questionDetailHere"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imgQuestionTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen10dp"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:layout_marginEnd="@dimen/dimen10dp"
+                android:layout_marginBottom="@dimen/dimen10dp"
+                android:textColor="@color/colorBlack" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardViewQuestionTitle3"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_marginBottom="@dimen/dimen10dp">
 
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
-                        android:id="@+id/tvQuestionContent"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="@dimen/dimen20dp"
-                        android:paddingEnd="@dimen/dimen20dp"
-                        android:layout_marginTop="@dimen/dimen10dp"
-                        android:layout_marginBottom="@dimen/dimen10dp"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="@dimen/dimen16dp"
-                        android:visibility="gone"/>
+                    android:id="@+id/tvQuestionContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen10dp"
+                    android:layout_marginBottom="@dimen/dimen10dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dimen20dp"
+                    android:paddingEnd="@dimen/dimen20dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/dimen16dp"
+                    android:visibility="gone" />
 
                 <RadioGroup
-                        android:id="@+id/rgAnswer"
+                    android:id="@+id/rgAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rbAnswerA"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    <RadioButton
-                            android:id="@+id/rbAnswerA"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen50dp"
-                            android:paddingStart="@dimen/dimen20dp"
-                            android:paddingEnd="@dimen/dimen20dp"
-                            android:paddingTop="@dimen/dimen10dp"
-                            android:paddingBottom="@dimen/dimen10dp"
-                            android:background="@drawable/bg_answer"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/dimen16dp"
-                            android:button="@null"/>
+                        android:layout_height="@dimen/dimen50dp"
+                        android:background="@drawable/bg_answer"
+                        android:button="@null"
+                        android:paddingStart="@dimen/dimen20dp"
+                        android:paddingTop="@dimen/dimen10dp"
+                        android:paddingEnd="@dimen/dimen20dp"
+                        android:paddingBottom="@dimen/dimen10dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/dimen16dp" />
 
                     <View
-                            android:id="@+id/divider2"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="@dimen/dimen20dp"
-                            android:layout_marginEnd="@dimen/dimen20dp"
-                            android:background="?android:attr/listDivider"/>
+                        android:id="@+id/divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/dimen20dp"
+                        android:layout_marginEnd="@dimen/dimen20dp"
+                        android:background="?android:attr/listDivider" />
 
                     <RadioButton
-                            android:id="@+id/rbAnswerB"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen50dp"
-                            android:paddingStart="@dimen/dimen20dp"
-                            android:paddingEnd="@dimen/dimen20dp"
-                            android:paddingTop="@dimen/dimen10dp"
-                            android:paddingBottom="@dimen/dimen10dp"
-                            android:textColor="@color/colorBlack"
-                            android:background="@drawable/bg_answer"
-                            android:textSize="@dimen/dimen16dp"
-                            android:button="@null"/>
+                        android:id="@+id/rbAnswerB"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen50dp"
+                        android:background="@drawable/bg_answer"
+                        android:button="@null"
+                        android:paddingStart="@dimen/dimen20dp"
+                        android:paddingTop="@dimen/dimen10dp"
+                        android:paddingEnd="@dimen/dimen20dp"
+                        android:paddingBottom="@dimen/dimen10dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/dimen16dp" />
 
                     <View
-                            android:id="@+id/divider3"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="@dimen/dimen20dp"
-                            android:layout_marginEnd="@dimen/dimen20dp"
-                            android:background="?android:attr/listDivider"/>
+                        android:id="@+id/divider3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/dimen20dp"
+                        android:layout_marginEnd="@dimen/dimen20dp"
+                        android:background="?android:attr/listDivider" />
 
                     <RadioButton
-                            android:id="@+id/rbAnswerC"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen50dp"
-                            android:paddingStart="@dimen/dimen20dp"
-                            android:paddingEnd="@dimen/dimen20dp"
-                            android:paddingTop="@dimen/dimen10dp"
-                            android:paddingBottom="@dimen/dimen10dp"
-                            android:background="@drawable/bg_answer"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/dimen16dp"
-                            android:button="@null"/>
+                        android:id="@+id/rbAnswerC"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen50dp"
+                        android:background="@drawable/bg_answer"
+                        android:button="@null"
+                        android:paddingStart="@dimen/dimen20dp"
+                        android:paddingTop="@dimen/dimen10dp"
+                        android:paddingEnd="@dimen/dimen20dp"
+                        android:paddingBottom="@dimen/dimen10dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/dimen16dp" />
 
                     <View
-                            android:id="@+id/divider4"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="@dimen/dimen20dp"
-                            android:layout_marginEnd="@dimen/dimen20dp"
-                            android:background="?android:attr/listDivider"/>
+                        android:id="@+id/divider4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/dimen20dp"
+                        android:layout_marginEnd="@dimen/dimen20dp"
+                        android:background="?android:attr/listDivider" />
 
                     <RadioButton
-                            android:id="@+id/rbAnswerD"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimen50dp"
-                            android:paddingStart="@dimen/dimen20dp"
-                            android:paddingEnd="@dimen/dimen20dp"
-                            android:paddingTop="@dimen/dimen10dp"
-                            android:paddingBottom="@dimen/dimen10dp"
-                            android:background="@drawable/bg_answer"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/dimen16dp"
-                            android:button="@null"/>
+                        android:id="@+id/rbAnswerD"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen50dp"
+                        android:background="@drawable/bg_answer"
+                        android:button="@null"
+                        android:paddingStart="@dimen/dimen20dp"
+                        android:paddingTop="@dimen/dimen10dp"
+                        android:paddingEnd="@dimen/dimen20dp"
+                        android:paddingBottom="@dimen/dimen10dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/dimen16dp" />
 
                 </RadioGroup>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen40dp"
-                android:id="@+id/cardViewAudio"
-                android:layout_below="@+id/cardViewAnswer"
-                android:layout_marginStart="@dimen/dimen10dp"
-                android:layout_marginEnd="@dimen/dimen10dp"
-                android:layout_marginBottom="@dimen/dimen10dp"
-                android:visibility="gone">
+            android:id="@+id/cardViewAudio"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen40dp"
+            android:layout_below="@+id/cardViewAnswer"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_marginBottom="@dimen/dimen10dp"
+            android:visibility="gone">
 
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/dimen5dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen5dp">
 
                 <ImageView
-                        android:id="@+id/imgState"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen30dp"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:textColor="@color/colorBlack"
-                        android:src="@drawable/ic_play_circle_outline_black_24dp"
-                        android:textStyle="bold"/>
+                    android:id="@+id/imgState"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/ic_play_circle_outline_black_24dp"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="@dimen/dimen10dp"
-                        android:id="@+id/tvCurrentTime"
-                        android:layout_gravity="center"
-                        android:text="@string/timeDefault"/>
+                    android:id="@+id/tvCurrentTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen10dp"
+                    android:layout_weight="1"
+                    android:text="@string/timeDefault" />
 
                 <SeekBar
-                        android:layout_width="0dp"
-                        android:layout_weight="5"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:id="@+id/seekBarPlay"/>
+                    android:id="@+id/seekBarPlay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5" />
 
                 <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/dimen10dp"
-                        android:layout_gravity="center"
-                        android:id="@+id/tvTotalTime"
-                        android:text="@string/timeDefault"/>
+                    android:id="@+id/tvTotalTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dimen10dp"
+                    android:layout_weight="1"
+                    android:text="@string/timeDefault" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewExplanation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/dimen10dp"
-                android:layout_marginEnd="@dimen/dimen10dp"
-                android:layout_marginBottom="@dimen/dimen10dp"
-                android:layout_below="@+id/cardViewAudio"
-                android:visibility="gone">
+            android:id="@+id/cardViewExplanation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cardViewAudio"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_marginBottom="@dimen/dimen10dp"
+            android:visibility="gone">
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dimen10dp"
+                android:paddingBottom="@dimen/dimen10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen10dp"
+                    android:text="@string/explanation"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/dimen16dp" />
+
+                <TextView
+                    android:id="@+id/tvExplanation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/dimen10dp"
-                    android:paddingBottom="@dimen/dimen10dp"
-                    android:orientation="vertical">
+                    android:layout_marginStart="@dimen/dimen20dp"
+                    android:layout_marginEnd="@dimen/dimen10dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/dimen16dp" />
 
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/explanation"
-                        android:textColor="@color/colorRed"
-                        android:textSize="@dimen/dimen16dp"
-                        android:layout_marginStart="@dimen/dimen10dp"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen10dp"
+                    android:layout_marginTop="@dimen/dimen10dp"
+                    android:text="@string/translation"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/dimen16dp" />
 
                 <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/tvExplanation"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="@dimen/dimen16dp"
-                        android:layout_marginStart="@dimen/dimen20dp"
-                        android:layout_marginEnd="@dimen/dimen10dp"/>
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/translation"
-                        android:textColor="@color/colorRed"
-                        android:textSize="@dimen/dimen16dp"
-                        android:layout_marginStart="@dimen/dimen10dp"
-                        android:layout_marginTop="@dimen/dimen10dp"/>
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/tvTranslation"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="@dimen/dimen16dp"
-                        android:layout_marginStart="@dimen/dimen20dp"
-                        android:layout_marginEnd="@dimen/dimen10dp"/>
+                    android:id="@+id/tvTranslation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen20dp"
+                    android:layout_marginEnd="@dimen/dimen10dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/dimen16dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
