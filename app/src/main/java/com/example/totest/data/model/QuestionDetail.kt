@@ -17,5 +17,7 @@ data class QuestionDetail(
     val translation: String = "",
     val questionContent: String = "",
     val question: String = "",
-    val image: String = ""
+    val image: String = "",
+    val image2: String = "",
+    val image3: String = ""
 ) : Parcelable
