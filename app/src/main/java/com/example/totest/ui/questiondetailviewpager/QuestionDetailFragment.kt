@@ -147,7 +147,9 @@ class QuestionDetailFragment : Fragment(), View.OnClickListener {
             R.id.itemPart3, R.id.itemPart4 -> {
                 with(View.VISIBLE) {
                     tvQuestionContent.visibility = this
-                    cardViewAudio.visibility = this
+                    if(data?.audio?.isNotEmpty() == true) {
+                        cardViewAudio.visibility = this
+                    }
                 }
                 with(View.GONE) {
                     tvQuestionTitle.visibility = this
