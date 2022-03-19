@@ -67,7 +67,7 @@ class GrammarDetailFragment : Fragment() {
             R.id.itemToeicIntroduction -> {
                 (activity as ListTestActivity).apply {
                     initProgressDialog()
-                    //notifyNetworkStatus()
+                    notifyNetworkStatus()
                 }
                 FirebaseDatabase.getInstance().getReference("toeicIntroduction")
             }
